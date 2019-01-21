@@ -11,7 +11,7 @@ var methodOverride = require("method-override");
 app.set ("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://localhost/ra_law");
+mongoose.connect("mongodb://Lucie:lucinka1991@ds163164.mlab.com:63164/ralawproject");
 app.use(methodOverride("_method"));
 mongoose.set('useFindAndModify', false);
 
