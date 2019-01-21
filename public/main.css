@@ -1,0 +1,273 @@
+/*General*/
+
+#link-div {
+    margin-top: 100px;
+}
+#center {
+    text-align:center;
+}
+
+.link {
+    color: black;
+    
+ 
+}
+
+
+.link: focus {
+  color: blue;
+}
+
+.link: active {
+    color: blue;
+}
+
+/*Quiz*/
+
+#count {
+    border: 1px solid #E8E7E7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:300px;
+    height:300px;
+    margin:auto;
+    margin-top: 100px;
+    
+    
+}
+
+#text {
+    height: 50px;
+    border-bottom: 1px solid #E8E7E7;
+    background-color: #F5F4F4;
+    font-size: x-large;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.button-result {
+    height:40px;
+    width:100px;
+    margin-left:30px;
+    margin-top: 50px;
+  
+}
+
+.btn-next {
+     height:40px;
+    width:150px;
+    background-color: #007bff;;
+    color:white;
+    text-transform: uppercase;
+    border-color: transparent;
+    border-radius: .25rem;
+    margin-left:75px;
+    margin-top:35px;
+       
+    
+}
+
+
+.messageDiv {
+    border: 1px solid #E8E7E7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:300px;
+    height:250px;
+    margin:auto;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    
+    
+}
+
+.heading {
+    
+    height: 50px;
+    border-bottom: 1px solid #E8E7E7;
+    background-color: #F5F4F4;
+    font-size: x-large;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 5px;
+
+}
+
+
+
+#correct-result, #message-result {
+    margin-top:10px;
+    text-align: center;
+
+}
+
+/* Kontakty */
+
+#new-form {
+    width: 250px; 
+    height: 300px;
+    margin: 100px auto;
+    border: 1px solid #E8E7E7;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.contact-div {
+   margin-left: auto;
+}
+
+.btn-block {
+    width: 100px;
+    float:right;
+    margin-top:40px;
+    text-transform: uppercase;
+}
+
+hr {
+    width: 80%;
+    color: black;
+    padding-top: 20px;
+}
+
+h4 {
+     color:black;
+     text-align: left;
+     font-size: 100%;
+     padding-bottom: 10px;
+     font-weight: normal;
+     
+}
+.name {
+    font-size: 150%;
+    font-weight: bolder;
+    
+    
+}
+.contacts {
+    text-align: left;
+    border: 1px solid #E8E7E7;
+    border-radius: 10px;
+    padding-top:10px;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+#icons {
+    float:right;
+    font-size: 80%;
+}
+
+
+span
+{
+	margin-top: 3px;
+    height: 20px;
+    margin-left:5px;
+	width:0px;
+	display: inline-block;
+	transition: 0.2s;
+	opacity: 0;
+}
+.contacts :hover span{
+	width: 18px;
+	opacity: 1;
+}
+
+a {
+    color: black;
+}
+
+/*Edit page*/
+
+#edit-form {
+    border: 1px solid #E8E7E7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:350px;
+    height:350px;
+    margin:auto;
+    margin-top: 200px;
+}
+
+#edit-div {
+   height: 50px;
+    border-bottom: 1px solid #E8E7E7;
+    background-color: #F5F4F4;
+    font-size: x-large;
+    padding-top: 5px;
+    padding-left:10px;
+    padding-bottom: 15px;
+    width:350px;
+    margin-left:0px;
+    margin-bottom:20px;
+   font-weight: bold;
+}
+
+.container {
+    padding-left:0px;
+}
+
+.edit-form {
+    margin-left:75px;
+    width:200px;
+}
+
+.btn-edit {
+    float:right;
+ 
+    margin-top: -31px;
+    margin-right: 5px;
+}
+
+.btn-cancel-edit {
+    background-color: white !important;
+    border-color:black !important;
+    color:black !important;
+}
+
+/*Delete page*/
+
+#delete-text {
+    text-align: center;
+}
+
+#quit {
+    margin-top:55px;
+}
+
+#divDelete {
+    border: 1px solid #E8E7E7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:350px;
+    height:230px;
+    margin:auto;
+    margin-top: 200px;
+    padding-bottom:15px;
+}
+
+#delete-but {
+    background-color: red;
+    float:right;
+    margin-top:-33px;
+    margin-right: 3px;
+}
+
+.a-btn {
+    color:black;
+    text-transform: uppercase;
+    border: 1px solid black;
+    border-radius: .25rem;
+    padding:7px;
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-top: 1000px !important;
+}
+
+.a-but {
+    margin-top:50px;
+    margin-left: 20px;
+}

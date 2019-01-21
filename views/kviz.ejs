@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ra-law Projekt</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet " href="/main.css">
+    </head>
+    <body>
+        
+        <div class="container" id="link-div">
+            <div id="center" class="row">
+                <div class="col-md-6 col-sm-12">
+                    <a class="link" href="/kontakty">Kontakty</a>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <a class="link" href="/kviz">Kvíz</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="count">
+            <div id="text"></div>
+            <div id="results">
+                <button  type="button" class="btn btn-primary button-result" >Result</button>
+                <button  type="button" class="btn btn-primary button-result" >Result</button>
+                <button  type="button" class="btn btn-primary button-result" >Result</button>
+                <button  type="button" class="btn btn-primary button-result" >Result</button>
+            </div>
+        </div>
+            
+         <div id="message">
+                <div id="heading"></div>
+                <div id="correct-result"></div>
+                <div id="message-result"></div>
+            </div>
+        
+        
+        <script>
+       
+        window.addEventListener('load', function() {
+            
+            var rnum1 = generateRandomNumber1 ();
+            var rnum2 = generateRandomNumber2 ();
+            var rnums = [rnum1, rnum2];
+            var rnumsSort = rnums.sort(function(a, b){return b-a});
+            var data= generateRandomOperatorAndCorrectResult(rnumsSort[0],rnumsSort[1]);
+            var operator=data[0];
+            var corResult = data[1][0][0];
+            var ranResult =[data[1][0][1],data[1][0][2],data[1][0][3]];
+            var allResults = data[1][0];
+            var sortAllResults = allResults.sort(function(a,b){return a - b});
+            var buttonText = buttonResult ();
+             
+            function buttonResult() {
+                for (var i=0; i< sortAllResults.length; i++){
+                document.querySelectorAll(".button-result")[i].textContent= sortAllResults[i];} 
+            
+            }
+          
+
+        document.querySelector("#text").textContent = "Kolik je " + rnumsSort[0]  + operator  +  rnumsSort[1] + "?"; 
+            
+            
+        var buttons = document.querySelectorAll(".button-result")
+            
+        for(var i=0; i < buttons.length ; i++){
+             
+             buttons[i].addEventListener ("click", function(){
+                var clickedResult = Number(this.textContent);
+	          
+	            if( clickedResult === corResult) 
+	            {document.querySelector("#heading").textContent = "Výsledek";
+	            document.querySelector("#heading").classList.add("heading");
+	              document.querySelector("#correct-result").textContent = clickedResult + "!"; 
+	              document.querySelector("#message-result").textContent = "Odpověděli jste správně.";
+	            var messageDiv = document.querySelector("#message");
+	             messageDiv.classList.add("messageDiv");
+	              var nextQuestion = document.createElement("button");
+	              nextQuestion.classList.add("btn-next");
+	              nextQuestion.textContent="Další otázka";
+	              messageDiv.appendChild(nextQuestion);
+	              nextQuestion.addEventListener ("click",function refreshPage(){
+                  window.location.reload();});}
+                  
+	        else { document.querySelector("#heading").textContent = "Výsledek";
+	               document.querySelector("#heading").classList.add("heading");
+	               document.querySelector("#correct-result").textContent = clickedResult + "!";
+	              document.querySelector("#message-result").textContent = "Toto je špatný výsledek, zkuste to znovu!";
+	              var messageDiv = document.querySelector("#message");
+	              messageDiv.classList.add("messageDiv");}
+	            
+	        })
+             }})
+         
+        
+        
+         function generateRandomNumber1 () {
+            var rnum1 = (Math.floor(Math.random() * 20) + 1);
+            return rnum1;
+            
+        }
+              
+                 
+        function generateRandomNumber2 () {
+            var rnum2 = (Math.floor(Math.random() * 20) + 1);
+            return rnum2;
+            
+        }       
+       
+
+        function generateRandomOperatorAndCorrectResult (num1, num2) {
+            var operators = [{
+                sign: "+",
+                method: function(rnum1,rnum2){ return rnum1 + rnum2; } },
+                {
+                 sign: "*",
+                 method: function(rnum1,rnum2){ return rnum1 * rnum2; } },
+                 {
+                 sign: "-",
+                method: function(rnum1,rnum2){ return rnum1 - rnum2; }
+                  }];
+                  
+            var results = [];
+            var selectedOperator = Math.floor(Math.random()*operators.length);
+            var randomOperator = operators[selectedOperator].sign;
+            var correctResult = (operators[selectedOperator].method(num1, num2)); //pass the numbers to the methods
+            results.push(correctResult);
+            var randomResult = generateRandomResults(3);
+            var result = results.concat(randomResult);
+            return [randomOperator, [result]];
+        
+        }
+           
+
+               
+        function generateRandomResults(nums) {
+            var randomNumbers = [];
+            for (var i = 0; i < nums; i++) {
+                randomNumbers.push((Math.floor(Math.random() * 200) + 1));}
+            return randomNumbers;
+        }
+            
+      
+             
+        function buttonResult() {
+            for (var i=0; i< sortAllResults.length; i++){
+            document.querySelectorAll(".button-result")[i].textContent= sortAllResults[i];} 
+            
+        }
+
+        </script>
+    
+    </body>
+</html>
