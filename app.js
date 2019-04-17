@@ -6,12 +6,14 @@ var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var methodOverride = require("method-override");
+var port = process.env.PORT;
+
 
 
 app.set ("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://localhost/ra_law");
+mongoose.connect("mongodb://Spajk:s182012@ds163164.mlab.com:63164/ralawproject");
 app.use(methodOverride("_method"));
 mongoose.set('useFindAndModify', false);
 
@@ -114,6 +116,6 @@ app.get("/kviz", function(req, res){
 
 
 
-app.listen(process.env.PORT, process.env.IP, function (){
+app.listen(port, function (){
     console.log("server started");
 });
