@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "simple app",
   "main": "app.js",
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  
+   "author": "Lucie Krištofová",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
@@ -10,11 +17,10 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.4.5"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
-  },
-  "author": "Lucie Krištofová",
-  "license": "ISC"
+  
+   "engines": {
+    "node": "6.11.2",
+    "npm": "3.10.10"
+  }
+ 
 }
